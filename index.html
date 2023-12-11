@@ -22,7 +22,15 @@ body, html {
     width: 100%;
     top: 2%;
     z-index: 2;
-    margin-top: 2; /* You can also remove or reduce the margin-top if it's set */
+    margin-top: 2; /* Remove or reduce the margin-top if it's set */
+    padding-top: 5px; /* Add padding at the top for spacing */
+    }
+
+/* Additional styles to adjust the space between the header and buttons */
+@media (min-width: 768px) {
+    .button-container {
+        top: 20%; /* Adjust top position to create more space below header */
+    }
 }
 
 .button-container {
