@@ -26,19 +26,19 @@ body, html {
 }
 
 .button-container {
-    grid-gap: 15px; /* Increased grid gap for more space between buttons */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Maintain two columns */
+    grid-gap: 20px; /* Adjust gap if necessary */
+    align-items: start; /* Align to the start to allow for the top of each button-wrapper to be different */
     padding: 5%; /* Reduced padding to move buttons closer to the edge */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
-    align-items: center;
     position: fixed;
     top: 12%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     height: 85%;
-    grid-template-columns: repeat(4, 1fr); /* Extend to 4 columns */
 }
 
     /* Target odd-numbered button wrappers */
@@ -62,8 +62,8 @@ body, html {
 .button {
     border: none;
     border-radius: 60%;
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     cursor: pointer;
     background-size: cover;
     background-position: center;
