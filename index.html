@@ -13,7 +13,7 @@ body, html {
 }
 
 .header {
-    marmargin-bottom: 25px; 
+    margin-bottom: 25px;
     font-size: 80px;
     font-family: 'Comic Sans MS', cursive;
     color: #6ab47b;
@@ -22,9 +22,9 @@ body, html {
     width: 100%;
     top: 2%;
     z-index: 2;
-    margin-top: 2; /* Remove or reduce the margin-top if it's set */
+    margin-top: 2%; /* Adjust top margin */
     padding-top: 5px; /* Add padding at the top for spacing */
-    }
+}
 
 /* Additional styles to adjust the space between the header and buttons */
 @media (min-width: 768px) {
@@ -35,13 +35,10 @@ body, html {
 
 .button-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Maintain two columns */
-    grid-gap: 20px 0; /* Vertical gap only, as the horizontal gap is managed by staggering */
-
-    align-items: start; /* Align to the start to allow for the top of each button-wrapper to be different */
-    padding: 5%; /* Reduced padding to move buttons closer to the edge */
-    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create a four-column grid */
+    grid-gap: 20px; /* Set the gap between buttons */
     justify-content: center;
+    align-items: center;
     position: fixed;
     top: 12%;
     left: 50%;
@@ -50,16 +47,14 @@ body, html {
     height: 85%;
 }
 
-/* Target odd-numbered button wrappers to shift them to the left */
+/* Odd rows: Take up column 1 and 2 */
 .button-container .button-wrapper:nth-child(odd) {
-    margin-right: auto; /* Pushes the button to the left */
-    margin-left: 0; /* Zero margin on the left */
+    grid-column-start: 1;
 }
 
-/* Target even-numbered button wrappers to shift them to the right */
+/* Even rows: Take up column 3 and 4 */
 .button-container .button-wrapper:nth-child(even) {
-    margin-left: auto; /* Pushes the button to the right */
-    margin-right: 0; /* Zero margin on the right */
+    grid-column-start: 3;
 }
     
 .button-wrapper {
