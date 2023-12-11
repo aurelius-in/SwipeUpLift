@@ -41,6 +41,16 @@ body, html {
     grid-template-columns: repeat(4, 1fr); /* Extend to 4 columns */
 }
 
+    /* Target odd-numbered button wrappers */
+.button-container .button-wrapper:nth-child(odd) {
+    transform: translateY(-20px); /* Move odd rows up */
+}
+
+/* Target even-numbered button wrappers */
+.button-container .button-wrapper:nth-child(even) {
+    transform: translateY(20px); /* Move even rows down */
+}
+
 .button-wrapper {
     position: relative;
     display: flex;
