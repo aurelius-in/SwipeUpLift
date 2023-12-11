@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-  body, html {
+body, html {
     height: 100%;
     margin: 0;
     font-family: 'Comic Sans MS', cursive;
@@ -21,21 +21,24 @@
   }
 
   .button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 10px; /* Space between buttons */
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: 80%;
   }
 
   .button-wrapper {
-    position: relative;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Space below each button */
   }
 
   .button {
@@ -43,26 +46,19 @@
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    margin-bottom: 20px;
     cursor: pointer;
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  .svg-text {
-    position: absolute;
-    top: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-  }
-
-  .svg-text-path {
-    fill: #000;
+  .text-above {
     font-size: 14px;
-    text-anchor: middle;
-  }
+    position: absolute;
+    top: -25px; /* Adjust the position above the button */
+    width: 100%;
+    text-align: center;
+  };
   
   .background-logo {
     position: fixed;
@@ -92,52 +88,46 @@
 <div class="header">SwipeUplift</div>
 <div class="button-container">
   <div class="button-wrapper">
+    <div class="text-above">I'm Enough</div>
     <button class="button" style="background-image: url('button1.png');"></button>
-    <svg class="svg-text" viewBox="0 0 150 40">
-      <path id="curve1" d="M0,40 Q75,10 150,40" stroke="transparent" fill="none"/>
-      <text>
-        <textPath xlink:href="#curve1" startOffset="50%" class="svg-text-path" style="font-size: 14px;">
-          I'm Enough
-        </textPath>
-      </text>
-    </svg>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Reasons to Live</div>
     <button class="button" style="background-image: url('button2.png');"></button>
-    <div class="button-text">Reasons to Live</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Things to Be Grateful For</div>
     <button class="button" style="background-image: url('button3.png');"></button>
-    <div class="button-text">Things to Be Grateful For</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Things That Make Me Smile</div>
     <button class="button" style="background-image: url('button4.png');"></button>
-    <div class="button-text">Things That Make Me Smile</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Positive Traits</div>
     <button class="button" style="background-image: url('button5.png');"></button>
-    <div class="button-text">Positive Traits</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Dream Destinations</div>
     <button class="button" style="background-image: url('button6.png');"></button>
-    <div class="button-text">Dream Destinations</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Acts of Kindness</div>
     <button class="button" style="background-image: url('button7.png');"></button>
-    <div class="button-text">Acts of Kindness</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Future Goals</div>
     <button class="button" style="background-image: url('button8.png');"></button>
-    <div class="button-text">Future Goals</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Self-Care Activities</div>
     <button class="button" style="background-image: url('button9.png');"></button>
-    <div class="button-text">Self-Care Activities</div>
   </div>
-  <div>
+  <div class="button-wrapper">
+    <div class="text-above">Inspirational Quotes</div>
     <button class="button" style="background-image: url('button10.png');"></button>
-    <div class="button-text">Inspirational Quotes</div>
   </div>
+</div>
 </div>
 <script>
   document.querySelectorAll('.button-text').forEach(wrapText);
