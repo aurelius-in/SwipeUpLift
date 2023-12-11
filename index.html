@@ -13,7 +13,8 @@ body, html {
 }
 
 .header {
-    font-size: 60px;
+    margin-top: 20px; /* Reduced top margin to move closer to the top */
+    font-size: 70px;
     font-family: 'Comic Sans MS', cursive;
     color: #6ab47b;
     text-align: center;
@@ -23,9 +24,10 @@ body, html {
     z-index: 2;}
 
 .button-container {
+    grid-gap: 15px; /* Increased grid gap for more space between buttons */
+    padding: 5%; /* Reduced padding to move buttons closer to the edge */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -56,8 +58,8 @@ body, html {
 }
 
 .svg-text {
+    top: -55px; /* Move the text a bit higher so it doesn't get cut off */
     position: absolute;
-    top: -50px;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
@@ -65,7 +67,7 @@ body, html {
 }
 
 .textPath {
-    font-size: 30px;
+    font-size: 24px; /* Reduced font size to prevent cutting off */
     text-anchor: middle;
     font-weight: bold;
 }
