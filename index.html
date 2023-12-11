@@ -220,6 +220,10 @@ body, html {
 <script>
   document.querySelectorAll('.button-text').forEach(wrapText);
 
+  document.getElementById('smile-button').addEventListener('click', function() {
+  window.location.href = 'smile.html'; // Redirect to smile.html
+});
+
   function wrapText(textWrapper) {
     const text = textWrapper.textContent;
     const characters = text.split('');
