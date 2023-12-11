@@ -56,10 +56,20 @@
     margin: auto;
   }
 
-  .button-text {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
+ .button-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-text span {
+    transform-origin: bottom center;
+    display: block;
   }
 </style>
 </head>
