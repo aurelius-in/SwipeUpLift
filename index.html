@@ -2,30 +2,44 @@
 <html>
 <head>
 <style>
-  body {
+  body, html {
+    height: 100%;
+    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    overflow: hidden;
   }
 
-  .header {
-    font-size: 30px;
-    color: #6ab47b; /* You can adjust this color to match your theme */
-    font-family: 'Comic Sans MS', 'Comic Neue', cursive; /* This is a playful font choice */
-    margin-bottom: 30px;
+  .background-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('logo.png'); /* Replace with your logo file path */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.1;
+    animation: fadeInOut 5s infinite;
+    z-index: -1;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 1; }
   }
 
   .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
     padding: 20px;
-    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
     width: 100%;
   }
 
@@ -35,29 +49,65 @@
     width: 150px;
     height: 150px;
     font-size: 14px;
-    text-align: center;
     cursor: pointer;
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+  }
+
+  .button-text {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
   }
 </style>
 </head>
 <body>
 
-<div class="header">SwipeUplift</div>
+<div class="background-logo"></div>
 
 <div class="button-container">
-  <button class="button" style="background-image: url('button1.png');">I'm Enough</button>
-  <button class="button" style="background-image: url('button2.png');">Reasons to Live</button>
-  <button class="button" style="background-image: url('button3.png');">Things to Be Grateful For</button>
-  <button class="button" style="background-image: url('button4.png');">Things That Make Me Smile</button>
-  <button class="button" style="background-image: url('button5.png');">Positive Traits</button>
-  <button class="button" style="background-image: url('button6.png');">Dream Destinations</button>
-  <button class="button" style="background-image: url('button7.png');">Acts of Kindness</button>
-  <button class="button" style="background-image: url('button8.png');">Future Goals</button>
-  <button class="button" style="background-image: url('button9.png');">Self-Care Activities</button>
-  <button class="button" style="background-image: url('button10.png');">Inspirational Quotes</button>
+  <div>
+    <button class="button" style="background-image: url('button1.png');"></button>
+    <div class="button-text">I'm Enough</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button2.png');"></button>
+    <div class="button-text">Reasons to Live</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button3.png');"></button>
+    <div class="button-text">Things to Be Grateful For</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button4.png');"></button>
+    <div class="button-text">Things That Make Me Smile</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button5.png');"></button>
+    <div class="button-text">Positive Traits</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button6.png');"></button>
+    <div class="button-text">Dream Destinations</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button7.png');"></button>
+    <div class="button-text">Acts of Kindness</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button8.png');"></button>
+    <div class="button-text">Future Goals</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button9.png');"></button>
+    <div class="button-text">Self-Care Activities</div>
+  </div>
+  <div>
+    <button class="button" style="background-image: url('button10.png');"></button>
+    <div class="button-text">Inspirational Quotes</div>
+  </div>
 </div>
 
 </body>
