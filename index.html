@@ -9,14 +9,25 @@
     background-color: #f4f4f4;
     overflow: hidden;
   }
-
-   .header {
-    font-size: 80px; /* Adjusted font size for better visibility */
+.header {
+    font-size: 48px; /* Adjusted font size for better visibility */
     color: #6ab47b;
     text-align: center;
     width: 100%; /* Ensures the text is centered across the entire page */
     position: absolute;
     top: 10%; /* Adjust this value to position the title accordingly */
+    z-index: 2; /* Make sure it's above the background */
+  }
+
+  /* Style for the SVG text path */
+  .svg-text {
+    overflow: visible; /* Ensure SVG doesn't clip content */
+  }
+
+  .svg-text-path {
+    fill: #000;
+    font-size: 14px; /* You can adjust the font size here */
+    text-anchor: middle;
   }
   
   .background-logo {
@@ -88,18 +99,6 @@
     transform-origin: bottom center;
     display: block;
   }
-  .svg-text {
-    overflow: visible; /* Ensure SVG doesn't clip content */
-    position: absolute;
-    bottom: -35px; /* Adjust this to position the SVG text correctly */
-  }
-
-  .svg-text-path {
-    fill: #000;
-    font-size: 14px; /* You can adjust the font size here */
-    text-anchor: middle;
-  }
-
 
 </style>
 </head>
@@ -112,10 +111,10 @@
   <!-- SVG for curved text under button -->
   <div class="button-wrapper">
     <button class="button" style="background-image: url('button1.png');"></button>
-    <svg class="svg-text" width="150" height="40">
+    <svg class="svg-text" width="150" height="60">
       <!-- This path curves upwards -->
-      <path id="curve1" d="M20,40 Q75,10 130,40" stroke="transparent" fill="none" />
-      <text>
+      <path id="curve1" d="M10,60 A70 70 0 0 1 140 60" stroke="transparent" fill="none" />
+      <text width="150">
         <textPath xlink:href="#curve1" startOffset="50%" class="svg-text-path">
           I'm Enough
         </textPath>
