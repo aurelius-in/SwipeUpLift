@@ -109,6 +109,24 @@
     <div class="button-text">Inspirational Quotes</div>
   </div>
 </div>
+<script>
+  document.querySelectorAll('.button-text').forEach(wrapText);
 
+  function wrapText(textWrapper) {
+    const text = textWrapper.textContent;
+    const characters = text.split('');
+    textWrapper.textContent = '';
+    let angle = -90;
+    const deltaAngle = 180 / characters.length;
+
+    characters.forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.transform = `rotate(${angle}deg)`;
+      textWrapper.appendChild(span);
+      angle += deltaAngle;
+    });
+  }
+</script>
 </body>
 </html>
