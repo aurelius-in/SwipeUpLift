@@ -24,10 +24,10 @@ body, html {
 
 .button-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr; /* Two columns */
     grid-gap: 20px;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     position: fixed;
     top: 15%;
     left: 50%;
@@ -36,23 +36,54 @@ body, html {
     height: 80%;
 }
 
+/* Adjust the button size and margin to make sure they fit in the container without wrapping */
 .button-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+    margin-top: 30px;
+    width: calc(50% - 10px); /* Subtract the gap size divided by two from 50% */
 }
 
 .button {
     border: none;
     border-radius: 60%;
-    width: 200px;
-    height: 200px;
+    width: 100%; /* Make button width responsive to the parent container */
+    padding-top: 100%; /* Use padding to maintain aspect ratio */
     cursor: pointer;
     background-size: cover;
     background-position: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    position: relative; /* Positioned relative to allow absolute positioning of the svg-text */
+}
+
+/* Target every second button-wrapper to translate it */
+.button-container > .button-wrapper:nth-of-type(2n) {
+    align-self: end;
+    transform: translateX(10%);
+}
+
+.button-container > .button-wrapper:nth-of-type(2n+1) {
+    align-self: start;
+    transform: translateX(-10%);
+}
+
+/* Adjust the svg-text to be positioned absolutely within the button */
+.svg-text {
+    position: absolute;
+    bottom: 100%; /* Position it at the bottom of the button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%; /* Make it slightly wider than the button to account for the curve */
+    height: auto;
+}
+
+.textPath {
+    font-size: 18px; /* Adjust font size so it doesn't get cut off */
+    text-anchor: middle;
+    font-weight: bold;
 }
 
 /* Specific column placement for Gratitude and Smile */
@@ -70,21 +101,6 @@ body, html {
     
 #smile-button, #goals-button {
     grid-column: 4;
-}
-
-.svg-text {
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    height: 100px;
-}
-
-.textPath {
-    font-size: 30px;
-    text-anchor: middle;
-    font-weight: bold;
 }
 
 .background-logo {
