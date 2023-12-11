@@ -81,9 +81,10 @@
   }
   .svg-text-path {
     fill: #000;
-    font-size: 12px;
-    /* You can add more styling if needed */
+    font-size: 14px; /* You can adjust the font size here */
+    text-anchor: middle;
   }
+
 </style>
 </head>
 <body>
@@ -95,8 +96,8 @@
   <div class="button-wrapper">
     <button class="button" style="background-image: url('button1.png');"></button>
     <svg width="160" height="50">
-      <path id="curve1" d="M10,40 Q80,10 150,40" stroke="transparent" fill="none" />
-      <text width="160">
+      <path id="curve1" d="M10,50 Q90,0 170,50" stroke="transparent" fill="none" />
+     <text width="160">
         <textPath xlink:href="#curve1" startOffset="50%" class="svg-text-path" text-anchor="middle">
           I'm Enough
         </textPath>
