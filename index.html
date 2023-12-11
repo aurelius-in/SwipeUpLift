@@ -142,15 +142,14 @@
 <div class="button-container">
   <div class="button-wrapper">
     <button class="button" style="background-image: url('button1.png');"></button>
-    <svg class="svg-text" viewBox="0 0 150 20">
-      <!-- Updated path for upward arc -->
-      <path id="curve1" d="M0,20 Q75,-20 150,20" stroke="transparent" fill="none"/>
-      <text>
-        <textPath xlink:href="#curve1" startOffset="50%" dominant-baseline="middle" class="svg-text-path">
-          I'm Enough
-        </textPath>
-      </text>
-    </svg>
+    <svg width="160" height="50">
+  <path id="curve1" d="M20,50 A55,55 0 0,0 140,50" fill="none" stroke="red"/>
+  <text width="160">
+    <textPath xlink:href="#curve1" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+      I'm Enough
+    </textPath>
+  </text>
+</svg>
   </div>
   <div>
     <button class="button" style="background-image: url('button2.png');"></button>
