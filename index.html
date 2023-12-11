@@ -41,18 +41,16 @@ body, html {
     height: 85%;
 }
 
-/* Target odd-numbered button wrappers to shift them to the left */
 .button-container .button-wrapper:nth-child(odd) {
-    justify-self: end; /* Align to the end of the column */
-    transform: translateX(-10%); /* Adjust as necessary for your layout */
+    justify-self: start; /* Align to the start of the grid column */
+    transform: translateX(-15%); /* Move to the left outside the column */
 }
 
-/* Target even-numbered button wrappers to shift them to the right */
+/* Target even-numbered button wrappers */
 .button-container .button-wrapper:nth-child(even) {
-    justify-self: start; /* Align to the start of the column */
-    transform: translateX(10%); /* Adjust as necessary for your layout */
+    justify-self: end; /* Align to the end of the grid column */
+    transform: translateX(15%); /* Move to the right outside the column */
 }
-
 .button-wrapper {
     position: relative;
     display: flex;
