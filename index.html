@@ -13,7 +13,6 @@ body, html {
 }
 
 .header {
-    margin-bottom: 25px;
     font-size: 80px;
     font-family: 'Comic Sans MS', cursive;
     color: #6ab47b;
@@ -22,63 +21,54 @@ body, html {
     width: 100%;
     top: 2%;
     z-index: 2;
-    margin-top: 2%; /* Adjust top margin */
-    padding-top: 5px; /* Add padding at the top for spacing */
-}
-
-/* Additional styles to adjust the space between the header and buttons */
-@media (min-width: 768px) {
-    .button-container {
-        top: 20%; /* Adjust top position to create more space below header */
-    }
+    margin-top: 0; /* Adjust the top margin to bring it closer to the top */
 }
 
 .button-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Create a four-column grid */
-    grid-gap: 20px; /* Set the gap between buttons */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 12%;
+    top: 15%; /* Increased the top value to push the buttons down */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    height: 85%;
+    height: 80%; /* Adjusted the height to give more space at the bottom */
 }
 
-/* Odd rows: Take up column 1 and 2 */
-.button-container .button-wrapper:nth-child(odd) {
-    grid-column-start: 1;
-}
-
-/* Even rows: Take up column 3 and 4 */
-.button-container .button-wrapper:nth-child(even) {
-    grid-column-start: 3;
-}
-    
 .button-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 30px; /* Increased margin-bottom to add more space below */
 }
 
 .button {
     border: none;
     border-radius: 60%;
-    width: 230px;
-    height: 230px;
+    width: 250px; /* Adjusted button size */
+    height: 250px; /* Adjusted button size */
     cursor: pointer;
     background-size: cover;
     background-position: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Staggered alignment */
+.button-wrapper:nth-child(odd) {
+    margin-right: 20px; /* Push odd rows to the left */
+}
+
+.button-wrapper:nth-child(even) {
+    margin-left: 20px; /* Push even rows to the right */
+}
+
 .svg-text {
-    top: -60px; /* Reduce the negative value to move the text down a bit */
     position: absolute;
+    top: -70px; /* Added more space above the arced text */
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
@@ -86,7 +76,7 @@ body, html {
 }
 
 .textPath {
-    font-size: 30px; /* Reduced font size to prevent cutting off */
+    font-size: 30px;
     text-anchor: middle;
     font-weight: bold;
 }
@@ -113,7 +103,6 @@ body, html {
 </style>
 </head>
 <body>
-
 <div class="background-logo"></div>
 <div class="header">SwipeUplift</div>
 <div class="button-container">
