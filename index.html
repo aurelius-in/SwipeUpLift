@@ -35,8 +35,9 @@ body, html {
 
 .button-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    grid-gap: 20px;  
+    grid-template-columns: repeat(2, 1fr); /* Maintain two columns */
+    grid-gap: 20px 0; /* Vertical gap only, as the horizontal gap is managed by staggering */
+
     align-items: start; /* Align to the start to allow for the top of each button-wrapper to be different */
     padding: 5%; /* Reduced padding to move buttons closer to the edge */
     display: grid;
@@ -49,16 +50,18 @@ body, html {
     height: 85%;
 }
 
+/* Target odd-numbered button wrappers to shift them to the left */
 .button-container .button-wrapper:nth-child(odd) {
-    justify-self: start; /* Align to the start of the grid column */
-    transform: translateX(-15%); /* Move to the left outside the column */
+    margin-right: auto; /* Pushes the button to the left */
+    margin-left: 0; /* Zero margin on the left */
 }
 
-/* Target even-numbered button wrappers */
+/* Target even-numbered button wrappers to shift them to the right */
 .button-container .button-wrapper:nth-child(even) {
-    justify-self: end; /* Align to the end of the grid column */
-    transform: translateX(15%); /* Move to the right outside the column */
+    margin-left: auto; /* Pushes the button to the right */
+    margin-right: 0; /* Zero margin on the right */
 }
+    
 .button-wrapper {
     position: relative;
     display: flex;
