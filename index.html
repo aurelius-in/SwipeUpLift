@@ -35,10 +35,19 @@ body, html {
   }
 
   .button-wrapper {
+    position: relative; /* This provides a positioning context for absolutely positioned children */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Space below each button */
+    margin: 10px; /* Adjust the margin as needed */
+  }
+
+  .text-above {
+    font-size: 14px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 100%; /* Position the text above the button */
   }
 
   .button {
@@ -52,14 +61,6 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  .text-above {
-    font-size: 14px;
-    position: absolute;
-    top: -25px; /* Adjust the position above the button */
-    width: 100%;
-    text-align: center;
-  };
-  
   .background-logo {
     position: fixed;
     top: 0;
@@ -88,43 +89,113 @@ body, html {
 <div class="header">SwipeUplift</div>
 <div class="button-container">
   <div class="button-wrapper">
-    <div class="text-above">I'm Enough</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve1" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve1" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          I'm Enough
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button1.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Reasons to Live</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve2" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve2" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Reasons to Live
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button2.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Things to Be Grateful For</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve3" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve3" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Things to Be Grateful For
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button3.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Things That Make Me Smile</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve4" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve4" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Things That Make Me Smile
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button4.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Positive Traits</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve5" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve5" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Positive Traits
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button5.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Dream Destinations</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve6" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve6" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Dream Destinations
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button6.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Acts of Kindness</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve7" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve7" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Acts of Kindness
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button7.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Future Goals</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve8" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve8" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Future Goals
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button8.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Self-Care Activities</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve9" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve9" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Self-Care Activities
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button9.png');"></button>
   </div>
   <div class="button-wrapper">
-    <div class="text-above">Inspirational Quotes</div>
+    <svg class="svg-text" width="160" height="50">
+      <path id="curve10" d="M20,50 A55,55 0 0,1 140,50" fill="none" stroke="transparent"/>
+      <text>
+        <textPath xlink:href="#curve10" startOffset="50%" text-anchor="middle" style="font-size: 14px;">
+          Inspirational Quotes
+        </textPath>
+      </text>
+    </svg>
     <button class="button" style="background-image: url('button10.png');"></button>
   </div>
 </div>
