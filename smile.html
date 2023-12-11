@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smile Screen</title>
+<style>
+/* Add your CSS styles here */
+#smile-message-container {
+  display: block; /* Show by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: white;
+  z-index: 1000;
+}
+
+#feedback-message {
+  margin-top: 20px;
+  color: #777;
+  opacity: 0.5;
+}
+
+/* ... (your existing styles) ... */
+</style>
+</head>
+<body>
+
+<!-- This container will hold the message -->
+<div id="smile-message-container">
+  <p id="smile-message"></p>
+  <p id="feedback-message"></p>
+</div>
+
+<script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+<script>
+// Messages array
+const messages = [
+  "A sunny day makes me smile",
+  "A child's laughter can make me smile",
+  // ... (the rest of your messages)
+];
+
+// Feedback messages for swipes
+const upswipeMessages = [
+  "I agree", "Yes", "True", "Yep", "That's me", "Exactly", "Yeah", "😄", "Sometimes", "Fair enough", "I like that", "Like", "Up Swipe", "Sure", "Always"
+];
+
+const downswipeMessages = [
+  "Nope", "Rarely", "Hardly", "Not really", "Probably not", "No way", "I don't like that", "Nah", "😞", "Not so", "Not me", "Unlikely", "I don't think so", "No", "Never", "Yeah right", "Umm No"
+];
+
+// Arrays to store liked and excluded messages
+const myMessages = [];
+const excludedMessages = [];
+
+// Function to display a message
+function displayMessage(index) {
+  const messageContainer = document.getElementById('smile-message-container');
+  const messageParagraph = document.getElementById('smile-message');
+  messageParagraph.textContent = messages[index];
+}
+
+// Function to display feedback message
+function displayFeedbackMessage(isUpSwipe) {
+  const feedbackMessage = document.getElementById('feedback-message');
+  const messageArray = isUpSwipe ? upswipeMessages : downswipeMessages;
+  const randomIndex = Math.floor(Math.random() * messageArray.length);
+  feedbackMessage.textContent = messageArray[randomIndex];
+  setTimeout(() => feedbackMessage.textContent = '', 2000); // Clear after 2 seconds
+}
+
+// Initialize Hammer.js on the message container
+const messageContainer = document.getElementById('smile-message-container');
+const hammer = new Hammer(messageContainer);
+
+// Handling swipe gestures
+hammer.on('swipeup', function() {
+  myMessages.push(messages[currentIndex]);
+  displayFeedbackMessage(true);
+  currentIndex = (currentIndex + 1) % messages.length;
+  displayMessage(currentIndex);
+});
+
+hammer.on('swipedown', function() {
+  excludedMessages.push(messages[currentIndex]);
+  displayFeedbackMessage(false);
+  currentIndex = (currentIndex + 1) % messages.length;
+  displayMessage(currentIndex);
+});
+
+// Start with the first message
+let currentIndex = 0;
+displayMessage(currentIndex);
+
+</script>
+</body>
+</html>
