@@ -26,9 +26,11 @@
   }
 
 #smile-message, #feedback-message {
-  color: #fff; /* Default text color */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Strong black text shadow for contrast */
-  padding: 5px; /* Optional: for a bit of spacing around text */
+    color: #fff; /* White text color */
+    -webkit-text-stroke: 1px black; /* Black text outline (mainly for Webkit browsers) */
+    text-shadow: 2px 2px 8px black; /* Black text shadow */
+    font-size: calc(3vw + 10px); /* Smaller text size */
+     padding: 5px; /* Optional: for a bit of spacing around text */
   max-width: 80%; /* Limit the width of the text block */
   margin: 20px auto; /* Center the text block */
 }
