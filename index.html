@@ -38,15 +38,21 @@
     .row {
       display: flex;
       justify-content: center;
-      margin-bottom: 60px; /* Increased space between rows */
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px; /* Adjust the space between rows as needed */
     }
 
     .button-wrapper {
-      margin: 0 40px; /* Increased space between buttons */
-      position: relative;
-      width: 240px;
-      height: 240px;
+      margin: 10px; /* Space around each button */
+      width: 240px; /* Width of the button */
+      height: 200px; /* Height of the button */
+      display: flex; /* Enables centering of the text with justify-content and align-items */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      position: relative; /* Relative for positioning the SVG text */
     }
+
 
     .button {
       border: none;
