@@ -10,7 +10,7 @@
       font-family: 'Comic Sans MS', sans-serif;
       font-weight: bold;
       background-color: #f4f4f4;
-      overflow-x: hidden; /* Prevents horizontal scrolling */
+      overflow-x: hidden;
     }
 
     .header {
@@ -23,7 +23,24 @@
       top: 3%;
       z-index: 2;
     }
-  
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      top: 10%;
+      width: 100%;
+      padding: 2rem 0;
+    }
+
+    .button-wrapper {
+      flex-basis: calc(33.333% - 40px); /* three columns with spacing */
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+
     .button {
       border: none;
       border-radius: 50%;
@@ -32,73 +49,44 @@
       cursor: pointer;
       background-size: cover;
       background-position: center;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button:nth-child(1) {
+      flex-basis: 100%;
+    }
+
+    .button:nth-child(2), .button:nth-child(3) {
+      flex-basis: calc(50% - 40px);
+    }
+
+    .button:nth-child(n+4):nth-child(-n+6) {
+      flex-basis: calc(33.333% - 40px);
+    }
+
+    .button:nth-child(n+7):nth-child(-n+8) {
+      flex-basis: calc(50% - 40px);
+    }
+
+    .button:nth-child(n+9) {
+      flex-basis: calc(33.333% - 40px);
     }
 
     .svg-text {
       position: absolute;
-      top: -100px; /* Position the SVG text above the button */
+      top: -120px;
       left: 50%;
       transform: translateX(-50%);
-      width: 250px; /* Width of the SVG to fit the arc */
-      height: auto;
+      width: 240px;
     }
 
-     
-    .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative; /* Position relative to allow absolute positioning of "ME" button */
-    top: 8%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%; /* Adjust width as needed */
-    height: auto; /* Height adjusts to content */
-    margin-top: 20px; /* Space for the "ME" button */
-}
-
-/* The "ME" button at the top */
-.me-button {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: black; /* Change to the background of the "ME" button */
-    color: white; /* Text color for "ME" button */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px; /* Adjust size as needed */
-    margin-bottom: 40px; /* Space between "ME" button and grid */
-    z-index: 10; /* Ensure it's above other elements */
-}
-
-/* Staggered grid layout for other buttons */
-.button-wrapper {
-    width: 250px;
-    height: 250px;
-    margin: 10px; /* Space between buttons */
-    border-radius: 50%;
-    background: black; /* Change to the background of the buttons */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Adjust size as needed */
-}
-
-/* Adjust the nth-child pattern based on how many buttons you have per row */
-.button-container > :nth-child(4n+1), .button-container > :nth-child(4n+2) {
-    align-self: flex-start;
-}
-
-.button-container > :nth-child(4n+3), .button-container > :nth-child(4n+4) {
-    align-self: flex-end;
-}
     .textPath {
-      font-size: 18px; /* Adjust font size so it doesn't get cut off */
+      font-size: 24px;
       text-anchor: middle;
-      font-weight: bold;
+      startOffset: 50%;
     }
 
     .background-logo {
@@ -127,9 +115,9 @@
 <div class="header">SwipeUplift</div>
 <div class="button-container">
 
-<div id="enough-button" class="button-container">
+<div class="button-container">
   <!-- Button 0 -->
-  <div class="button-wrapper">
+  <div id="me-button" class="button-wrapper">
     <svg class="svg-text" viewBox="0 0 180 60">
       <path id="arc0" d="M20,40 Q80,10 140,40" fill="none" stroke="transparent"/>
  <text>
