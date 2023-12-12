@@ -3,6 +3,7 @@
 <head>
   <style>
 body, html {
+    hbody, html {
     height: 100%;
     margin: 0;
     font-family: 'Comic Sans MS', sans-serif;
@@ -23,54 +24,49 @@ body, html {
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     position: fixed;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     height: 80%;
+    padding: 10px;
 }
 
-/* Adjust the button size and margin to make sure they fit in the container without wrapping */
 .button-wrapper {
-    position: relative;
+    flex: 0 0 50%; /* Each button takes up 50% of the width of its container */
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Center button-wrapper in the available space */
+    position: relative;
     align-items: center;
     margin-bottom: 30px;
-    margin-top: 30px;
-    width: calc(50% - 10px); /* Subtract the gap size divided by two from 50% */
 }
 
 .button {
     border: none;
     border-radius: 60%;
-    width: 100%; /* Make button width responsive to the parent container */
-    padding-top: 100%; /* Use padding to maintain aspect ratio */
+    width: 140px; /* Fixed width for buttons */
+    height: 140px; /* Fixed height for buttons */
     cursor: pointer;
     background-size: cover;
     background-position: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    position: relative; /* Positioned relative to allow absolute positioning of the svg-text */
+    position: relative;
 }
 
-/* Target every second button-wrapper to translate it */
+/* Offset every second button-wrapper */
 .button-container > .button-wrapper:nth-of-type(2n) {
-    align-self: end;
-    transform: translateX(10%);
+    padding-right: 20%; /* Pushes the button to the left */
 }
 
 .button-container > .button-wrapper:nth-of-type(2n+1) {
-    align-self: start;
-    transform: translateX(-10%);
+    padding-left: 20%; /* Pushes the button to the right */
 }
 
-/* Adjust the svg-text to be positioned absolutely within the button */
 .svg-text {
     position: absolute;
     bottom: 100%; /* Position it at the bottom of the button */
@@ -84,23 +80,6 @@ body, html {
     font-size: 18px; /* Adjust font size so it doesn't get cut off */
     text-anchor: middle;
     font-weight: bold;
-}
-
-/* Specific column placement for Gratitude and Smile */
-#enough-button, #traits-button, #self-care-button {
-    grid-column: 1;
-}
-    
-#gratitude-button,#kindess-button  {
-    grid-column: 2;
-}
-
-#live-button, #destination-button, #quotes-button {
-    grid-column: 3;
-}
-    
-#smile-button, #goals-button {
-    grid-column: 4;
 }
 
 .background-logo {
@@ -121,7 +100,7 @@ body, html {
 @keyframes fadeInOut {
     0%, 100% { opacity: 0.1; }
     50% { opacity: 1; }
-}
+
 </style>
 </head>
 <body>
