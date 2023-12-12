@@ -5,38 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smile Screen</title>
 <style>
-/* Add your CSS styles here */
-#smile-message-container {
-  dis#smile-message-container {
-  display: block; /* Show by default */
-  position: fixed;
-  font-size: 50px;
-  top: 2%;
-  left: 2%;
-  width: 90vh; /* 100% of the viewport width */
-  height: 90vh; /* 100% of the viewport height */
-  padding: 20px;
-  text-align: center;
-  background-color: white;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
 
-#smile-message {
-  font-size: 50vw; /* Responsive font size based on viewport width */
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
+  .header {
+    font-size: 6vw; /* Adjusted for responsiveness */
+    font-family: 'Comic Sans MS', cursive;
+    color: #6ab47b;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 3%;
+    z-index: 2;
+  }
 
-#feedback-message {
-  font-size: 5vw; /* Slightly smaller font size for feedback */
-  color: #777;
-  opacity: 0.5; 
-}
+  #smile-message-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96%; /* Adjusted for padding */
+    height: auto; /* Changed to auto to fit content */
+    padding: 2%;
+    text-align: center;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #smile-message {
+    font-size: calc(5vw + 50px); /* Mix of viewport and static sizing */
+    color: #333;
+  }
+
+  #feedback-message {
+    font-size: calc(3vw + 15px); /* Mix of viewport and static sizing */
+    
 </style>
 </head>
 <body>
