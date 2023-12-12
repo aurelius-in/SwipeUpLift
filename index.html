@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <style>
+  <meta charset="UTF-8">
+  <title>SwipeUplift</title>
+  <style>
     body, html {
       height: 100%;
       margin: 0;
       font-family: 'Comic Sans MS', sans-serif;
       font-weight: bold;
       background-color: #f4f4f4;
-      overflow: hidden;
+      overflow-x: hidden; /* Prevents horizontal scrolling */
     }
 
     .header {
@@ -24,8 +26,7 @@
 
     .button-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       position: fixed;
       top: 15%;
@@ -33,39 +34,38 @@
       transform: translateX(-50%);
       width: 90%;
       height: 80%;
-      padding: 10px;
     }
 
     .button-wrapper {
-      flex: 1 0 calc(50% - 20px); /* Each button takes up 50% of the width of its container minus the gap */
+      width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 30px;
+      margin: 20px 0; /* Adds space between the buttons */
     }
 
     .button {
       border: none;
-      border-radius: 60%;
-      width: 140px;
-      height: 140px;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
       cursor: pointer;
       background-size: cover;
       background-position: center;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     }
 
-    /* Offset every second button-wrapper */
-    .button-wrapper:nth-of-type(2n) {
-      margin-right: 10%; /* Pushes the button to the right */
+    /* Stagger the buttons */
+    .button-wrapper:nth-child(odd) .button {
+      margin-right: auto;
     }
 
-    .button-wrapper:nth-of-type(2n+1) {
-      margin-left: 10%; /* Pushes the button to the left */
+    .button-wrapper:nth-child(even) .button {
+      margin-left: auto;
     }
 
     .svg-text {
       position: absolute;
-      top: -70px;
+      top: -60px;
       left: 50%;
       transform: translateX(-50%);
       width: 250px;
@@ -73,7 +73,7 @@
     }
 
     .textPath {
-      font-size: 18px;
+      font-size: 18px; /* Adjust font size so it doesn't get cut off */
       text-anchor: middle;
       font-weight: bold;
     }
@@ -100,10 +100,9 @@
   </style>
 </head>
 <body>
-
 <div class="background-logo"></div>
 <div class="header">SwipeUplift</div>
- <div class="button-container">
+<div class="button-container">
 <div id="enough-button" class="button-container">
   <!-- Button 1 -->
   <div class="button-wrapper">
