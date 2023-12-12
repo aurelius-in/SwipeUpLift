@@ -25,6 +25,24 @@
     z-index: 2;
   }
 
+#smile-message, #feedback-message {
+  color: #fff; /* Default text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Black text shadow for contrast */
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%; /* Limit the width of the text block */
+  margin: 20px auto; /* Center the text block */
+}
+
+/* Additional styles for responsiveness and aesthetics */
+@media (max-width: 768px) {
+  #smile-message, #feedback-message {
+    font-size: 5vw; /* Smaller text on smaller screens */
+  }
+}
+
+  
 #smile-message-container {
     position: fixed;
     top: 20px; /* Set to 0 to start from the top edge */
