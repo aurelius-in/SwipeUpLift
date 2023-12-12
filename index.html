@@ -23,27 +23,7 @@
       top: 3%;
       z-index: 2;
     }
-
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      top: 7%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      height: 80%;
-    }
-
-    .button-wrapper {
-      position: relative;
-      display: flex;
-      justify-content: center; /* Center button-wrapper in the available space */
-      margin-bottom: 60px; /* Adjust as needed for spacing between buttons */
-      width: 200px; /* Width of the button for consistent sizing */
-    }
-
+  
     .button {
       border: none;
       border-radius: 50%;
@@ -65,15 +45,56 @@
       height: auto;
     }
 
-        /* Offset every second button-wrapper */
-    .button-wrapper:nth-of-type(2n) {
-      margin-right: 12%; /* Pushes the button to the right */
-    /* Stagger the buttons */
-    
+     
+    .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Position relative to allow absolute positioning of "ME" button */
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Adjust width as needed */
+    height: auto; /* Height adjusts to content */
+    margin-top: 20px; /* Space for the "ME" button */
+}
 
-    .button-wrapper:nth-of-type(2n+1) {
-      margin-left: 12%; /* Pushes the button to the left */
+/* The "ME" button at the top */
+.me-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: black; /* Change to the background of the "ME" button */
+    color: white; /* Text color for "ME" button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px; /* Adjust size as needed */
+    margin-bottom: 40px; /* Space between "ME" button and grid */
+    z-index: 10; /* Ensure it's above other elements */
+}
 
+/* Staggered grid layout for other buttons */
+.button-wrapper {
+    width: 250px;
+    height: 250px;
+    margin: 10px; /* Space between buttons */
+    border-radius: 50%;
+    background: black; /* Change to the background of the buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Adjust size as needed */
+}
+
+/* Adjust the nth-child pattern based on how many buttons you have per row */
+.button-container > :nth-child(4n+1), .button-container > :nth-child(4n+2) {
+    align-self: flex-start;
+}
+
+.button-container > :nth-child(4n+3), .button-container > :nth-child(4n+4) {
+    align-self: flex-end;
+}
     .textPath {
       font-size: 18px; /* Adjust font size so it doesn't get cut off */
       text-anchor: middle;
@@ -105,6 +126,21 @@
 <div class="background-logo"></div>
 <div class="header">SwipeUplift</div>
 <div class="button-container">
+
+<div id="enough-button" class="button-container">
+  <!-- Button 0 -->
+  <div class="button-wrapper">
+    <svg class="svg-text" viewBox="0 0 180 60">
+      <path id="arc0" d="M20,40 Q80,10 140,40" fill="none" stroke="transparent"/>
+ <text>
+        <textPath xlink:href="#arc1" startOffset="50%" text-anchor="middle" style="font-size: 50px;">
+          Me
+        </textPath>
+      </text>
+    </svg>
+    <button class="button" style="background-image: url('me.jpg');"></button>
+  </div>
+  
 <div id="enough-button" class="button-container">
   <!-- Button 1 -->
   <div class="button-wrapper">
