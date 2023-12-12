@@ -10,12 +10,11 @@
       font-family: 'Comic Sans MS', sans-serif;
       font-weight: bold;
       background-color: #f4f4f4;
-      overflow-x: hidden; /* Prevents horizontal scrolling */
+      overflow-x: hidden;
     }
 
     .header {
       font-size: 80px;
-      font-family: 'Comic Sans MS', cursive;
       color: #6ab47b;
       text-align: center;
       position: fixed;
@@ -38,11 +37,11 @@
     .row {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px; /* Increased space between rows */
     }
 
     .button-wrapper {
-      margin: 0 10px;
+      margin: 0 20px; /* Increased space between buttons */
       position: relative;
       width: 200px;
       height: 200px;
@@ -64,14 +63,14 @@
 
     .svg-text {
       position: absolute;
-      top: -40px;
+      bottom: -50px; /* Position the text below the button */
       left: 50%;
       transform: translateX(-50%);
       width: 220px;
     }
 
     .textPath {
-      font-size: 24px;
+      font-size: 18px;
       text-anchor: middle;
       startOffset: 50%;
     }
@@ -101,6 +100,7 @@
 <div class="background-logo"></div>
 <div class="header">SwipeUplift</div>
 <div class="button-container">
+
   <!-- Row 1: Single Button -->
   <div class="row">
     <div class="button-wrapper">
